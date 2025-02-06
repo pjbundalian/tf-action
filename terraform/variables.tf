@@ -7,13 +7,11 @@ variable "vpc_id" {
 variable "public_subnets" {
   description = "A list of IDs for the public subnets in the VPC."
   type        = list(string)
-  default     = "pub_sub_sample"
 }
 
 variable "private_subnets" {
   description = "A list of IDs for the private subnets in the VPC."
   type        = list(string)
-  default     = "priv_sub_sample"
 }
 
 variable "alb_dns_name" {
