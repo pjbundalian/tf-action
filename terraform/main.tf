@@ -17,3 +17,9 @@ module "alb" {
   vpc_id         = module.vpc.vpc_id
   public_subnets = module.vpc.public_subnets
 }
+
+module "cloudfront" {
+  source      = "./cloudfront"
+  alb_dns_name = module.alb.alb_dns_name
+}
+
