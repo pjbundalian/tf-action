@@ -65,3 +65,11 @@ resource "aws_lb_listener" "front_end" {
     target_group_arn = aws_lb_target_group.tg.arn
   }
 }
+
+output "alb_sg_id" {
+  value = aws_security_group.alb_sg.id
+}
+
+output "alb_dns_name" {
+  value = aws_lb.alb.dns_name
+}
