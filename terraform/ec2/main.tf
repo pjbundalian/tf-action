@@ -6,6 +6,10 @@ variable "private_subnets" {
   type = list(string)
 }
 
+module "alb" {
+  source = "../alb"
+}
+
 resource "aws_security_group" "ec2_sg" {
   name        = "ec2-security-group"
   description = "Security group for EC2 instances"
@@ -15,7 +19,7 @@ resource "aws_security_group" "ec2_sg" {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
-    security_groups = [aws_security_group.alb_sg.id]
+    security_groups = [module.alb.alb_sg_id]
   }
 
   egress {

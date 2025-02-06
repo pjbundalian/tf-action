@@ -1,5 +1,5 @@
 resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block           = "10.0.0.0/16"
   enable_dns_hostnames = true
   enable_dns_support   = true
 
@@ -54,6 +54,16 @@ resource "aws_internet_gateway" "gw" {
   }
 }
 
+resource "aws_eip" "nat" {
+  lifecycle {
+    prevent_destroy = true
+  }
+
+  tags = {
+    Name = "NAT Gateway EIP"
+  }
+}
+
 resource "aws_nat_gateway" "nat" {
   allocation_id = aws_eip.nat.id
   subnet_id     = aws_subnet.public_1.id
@@ -61,10 +71,6 @@ resource "aws_nat_gateway" "nat" {
   tags = {
     Name = "MainNATGateway"
   }
-}
-
-resource "aws_eip" "nat" {
-  vpc = true
 }
 
 output "vpc_id" {
