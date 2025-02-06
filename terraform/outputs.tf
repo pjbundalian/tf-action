@@ -17,3 +17,14 @@ output "alb_dns_name" {
   value       = module.alb.alb_dns_name
   description = "The DNS name of the Application Load Balancer."
 }
+
+output "cloudfront_distribution_id" {
+  value       = module.cloudfront.cloudfront_distribution_id
+  description = "The ID of the CloudFront distribution."
+}
+
+output "cloudfront_distribution_domain" {
+  value       = module.cloudfront.cloudfront_distribution_domain
+  description = "The domain name of the CloudFront distribution."
+}
+
