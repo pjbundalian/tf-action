@@ -15,7 +15,6 @@ This repository uses GitHub Actions to automate the following Terraform operatio
 - **Plan**: Review proposed changes to the infrastructure.
 - **Apply**: Execute changes to deploy or update the infrastructure.
 - **Destroy**: Remove the deployed infrastructure.
-- **Invalidate Cache**: Manually trigger cache invalidation in CloudFront when updates need to be reflected globally immediately.
 
 ## How to Run Using GitHub Actions
 
@@ -38,13 +37,7 @@ The `terraform_destroy.yml` workflow is also triggered manually to safely remove
 2. Select the **Terraform Destroy** workflow.
 3. Click on **Run workflow**, choose the branch, and confirm to destroy the infrastructure.
 
-### Invalidate Cache
-When you need to ensure that updates are immediately visible globally, trigger the cache invalidation process:
-1. Navigate to the **Actions** tab in GitHub.
-2. Select the custom workflow for CloudFront cache invalidation.
-3. Click on **Run workflow** to start the invalidation process.
-
 ## Caution
-Ensure to review all changes thoroughly and understand the impact, especially when running the destroy command or invalidating the CloudFront cache, as these actions can have significant effects on the availability and performance of your application.
+Ensure to review all changes thoroughly and understand the impact, especially when running the destroy command as this action can have significant effects on the availability and performance of your application.
 
 

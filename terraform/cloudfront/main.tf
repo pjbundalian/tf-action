@@ -1,6 +1,5 @@
 variable "alb_dns_name" {
-  description = "The DNS name of the Application Load Balancer."
-  type        = string
+  type = string
 }
 
 resource "aws_cloudfront_distribution" "app_distribution" {
@@ -54,4 +53,5 @@ resource "aws_cloudfront_distribution" "app_distribution" {
     Name = "AppCloudFrontDist"
   }
 }
+
 

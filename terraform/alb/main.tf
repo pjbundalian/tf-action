@@ -71,5 +71,5 @@ output "alb_sg_id" {
 }
 
 output "alb_dns_name" {
-  value = aws_lb.alb.dns_name
+  value = aws_lb.app_alb.dns_name
 }

@@ -7,7 +7,7 @@ variable "private_subnets" {
 }
 
 module "alb" {
-  source = "../alb"
+  source         = "../alb"
   vpc_id         = var.vpc_id
   public_subnets = var.public_subnets
 }
@@ -18,9 +18,9 @@ resource "aws_security_group" "ec2_sg" {
   vpc_id      = var.vpc_id
 
   ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
+    from_port       = 80
+    to_port         = 80
+    protocol        = "tcp"
     security_groups = [module.alb.alb_sg_id]
   }
 
@@ -51,4 +51,5 @@ resource "aws_instance" "app_server" {
     Name = "NginxInstance"
   }
 }
+
 
