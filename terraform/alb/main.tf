@@ -1,11 +1,3 @@
-variable "public_subnets" {
-  type = list(string)
-}
-
-variable "vpc_id" {
-  type = string
-}
-
 resource "aws_security_group" "alb_sg" {
   name        = "alb-security-group"
   description = "Security group for ALB"
@@ -64,12 +56,4 @@ resource "aws_lb_listener" "front_end" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.tg.arn
   }
-}
-
-output "alb_sg_id" {
-  value = aws_security_group.alb_sg.id
-}
-
-output "alb_dns_name" {
-  value = aws_lb.app_alb.dns_name
 }

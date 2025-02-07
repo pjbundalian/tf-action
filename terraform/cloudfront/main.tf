@@ -1,7 +1,3 @@
-variable "alb_dns_name" {
-  type = string
-}
-
 resource "aws_cloudfront_distribution" "app_distribution" {
   origin {
     domain_name = var.alb_dns_name
