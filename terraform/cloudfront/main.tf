@@ -55,7 +55,3 @@ resource "aws_cloudfront_distribution" "app_distribution" {
   }
 }
 
-resource "aws_cloudfront_invalidation" "cache_invalidation" {
-  distribution_id = aws_cloudfront_distribution.app_distribution.id
-  paths           = ["/*"]
-}
