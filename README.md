@@ -1,7 +1,7 @@
-# Crescendo-DevOps-Exam
+# TF-Action
 
 ## Project Description
-Crescendo-DevOps-exam is a GitHub repository structured for a DevOps lead role exam at Crescendo, automating AWS infrastructure with Terraform and GitHub Actions. The setup includes configurations for VPC, EC2, ALB, and CloudFront to demonstrate infrastructure as code (IaC) deployment and management.
+TF-Action is a GitHub repository structured for GitHub Action testing, automating AWS infrastructure with Terraform and GitHub Actions. The setup includes configurations for VPC, EC2, ALB, and CloudFront to demonstrate infrastructure as code (IaC) deployment and management.
 
 ## Architecture
 The infrastructure is structured into several main components:
