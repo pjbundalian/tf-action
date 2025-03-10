@@ -1,4 +1,4 @@
-# TF-Action
+# TF-Action Test
 
 ## Project Description
 TF-Action is a GitHub repository structured for GitHub Action testing, automating AWS infrastructure with Terraform and GitHub Actions. The setup includes configurations for VPC, EC2, ALB, and CloudFront to demonstrate infrastructure as code (IaC) deployment and management.
